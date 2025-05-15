@@ -1,0 +1,46 @@
+﻿<Window x:Class="EmployeeManagement.Views.EmployeesView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EmployeeManagement.Views"
+        xmlns:vm="clr-namespace:EmployeeManagement.ViewModels"
+        mc:Ignorable="d"
+        Title="EmployeesView" Height="450" Width="800">
+    <Window.DataContext>
+        <vm:EmployeesViewModel></vm:EmployeesViewModel>
+    </Window.DataContext>
+    <Grid>
+        <ListView d:ItemsSource="{Binding Employees}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="100" DisplayMemberBinding="{Binding LastName}">
+                        <GridViewColumn.Header>Фамилия
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="100" DisplayMemberBinding="{Binding FirstName}">
+                        <GridViewColumn.Header>Имя
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="50" DisplayMemberBinding="{Binding Age}">
+                        <GridViewColumn.Header>Возраст
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="100" DisplayMemberBinding="{Binding CompanyName}">
+                        <GridViewColumn.Header>Компания
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="100" DisplayMemberBinding="{Binding Position}">
+                        <GridViewColumn.Header>Должность
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="100" DisplayMemberBinding="{Binding CityName}">
+                        <GridViewColumn.Header>Город
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</Window>
